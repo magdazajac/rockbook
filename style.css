@@ -1,15 +1,25 @@
+body {
+  font-family: "Work Sans", sans-serif;
+}
 section {
   height: 100vh;
   text-align: center;
   margin: 0 auto;
-  border: 1px solid black;
 }
+
+section,
+footer {
+  float: left;
+  width: 100%;
+}
+
 section.with-background {
   background-image: url("back.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
+
 .top-bar {
   display: flex;
   justify-content: space-between;
@@ -20,10 +30,40 @@ section.with-background {
   flex-direction: row;
 }
 
+.nav-bar li {
+  margin: 0.5rem;
+}
+
+.main-description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20vh;
+}
+
+.main-description * {
+  margin: 3vh;
+}
+.second-wrapper * {
+  margin: 3vh;
+}
+
+.main-button {
+  background-color: rgb(161, 183, 207);
+  border-color: unset;
+  border-width: unset;
+  border-style: unset;
+  padding: 1rem 2.6rem;
+  width: 15rem;
+  margin: auto;
+  margin-top: 5vh;
+  text-align: center;
+}
+
 footer .wrapper {
   display: flex;
   justify-content: space-between;
   margin: 5vh auto;
+  align-items: baseline;
 }
 
 .sub {
@@ -41,6 +81,16 @@ footer .wrapper {
   transform: translate(-2%, 0);
 }
 
+.sub-item:nth-of-type(2) .sub-title,
+.sub-item:nth-of-type(2) .sub-button {
+  background-color: rgb(125, 231, 151);
+}
+
+.sub-item:last-of-type .sub-title,
+.sub-item:last-of-type .sub-button {
+  background-color: rgb(49, 187, 251);
+}
+
 .sub-list {
   background-color: rgb(182, 182, 182);
 }
@@ -48,6 +98,22 @@ footer .wrapper {
 .sub-list li {
   margin-top: 1rem;
 }
+/*
+.sub-item ul:first-of-type
+.sub-item ul:nth-child
+{
+  color: red;
+}
+
+div class="sub-item"
+-> h3
+-> ul
+-> button
+
+h3
+.sub-item h3:first-of-type
+. 
+*/
 
 .sub-list li:last-child {
   margin-bottom: 1rem;
@@ -64,17 +130,18 @@ footer .wrapper {
   border-style: unset;
 }
 
+.main-button,
 .sub-title,
 .sub-button {
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 .sub-list {
-  border-radius: 0 0 5px 5px;
+  border-radius: 0 0 3px 3px;
 }
 
 .sub-item {
-  width: 30%;
+  width: 32%;
   display: flex;
   flex-direction: column;
 }
@@ -86,5 +153,44 @@ ul {
 .wrapper {
   width: 60vw;
   margin: 10vh auto;
-  height: 100%;
+  height: calc(100% - 20vh);
+}
+
+section p {
+  line-height: 1.6;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+}
+
+.contact * {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.demo {
+  background-color: #a4b9be;
+}
+
+section:last-of-type {
+  background-color: #2d3035;
+}
+
+.send-button {
+  background-color: rgb(161, 183, 207);
+  border-color: unset;
+  border-width: unset;
+  border-style: unset;
+  width: 15rem;
+}
+.white-text {
+  color: white;
+}
+.qst-txt {
+  font-size: 0.85em;
+}
+
+.contact input[type="email"]::placeholder {
+  color: tomato;
 }
