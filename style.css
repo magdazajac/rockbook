@@ -139,6 +139,7 @@ h3
 }
 
 .main-button,
+.send-button,
 .sub-title,
 .sub-button {
   border-radius: 3px;
@@ -172,9 +173,15 @@ section p {
 
 .contact * {
   margin: auto;
-  width: 50%;
+  width: 35%;
   display: flex;
   flex-direction: column;
+  border-color: unset;
+  border-width: unset;
+  border-style: hidden;
+  margin: 2vh auto;
+  border-radius: 3px;
+  padding: 2vh;
 }
 
 .demo {
@@ -182,7 +189,7 @@ section p {
 }
 
 section:last-of-type {
-  background-color: #a68a89ff;
+  background-color: rgb(158, 114, 113);
 }
 
 .send-button {
@@ -199,6 +206,31 @@ section:last-of-type {
   font-size: 0.85em;
 }
 
-.contact input[type="email"]::placeholder {
-  color: tomato;
+.contact input[type="email"]::placeholder,
+[type="text"]::placeholder {
+  color: rgb(223, 198, 196);
+}
+
+/* .contact input[type="text"]::placeholder {
+  ;
+} */
+
+.contact input {
+  background-color: rgb(195, 149, 147);
+}
+
+#message {
+  height: 10vh;
+}
+
+/* .contact:nth-of-type(3) {
+  height: 10vh;
+} */
+
+.send-button {
+  padding: 1rem 2.6rem;
+  width: 39%;
+  margin: auto;
+  text-align: center;
+  display: grid;
 }
