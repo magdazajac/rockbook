@@ -48,7 +48,7 @@ section.with-background {
 }
 
 .main-button {
-  background-color: rgb(161, 183, 207);
+  background-color: #ffa58fff;
   border-color: unset;
   border-width: unset;
   border-style: unset;
@@ -83,12 +83,20 @@ footer .wrapper {
 
 .sub-item:nth-of-type(2) .sub-title,
 .sub-item:nth-of-type(2) .sub-button {
-  background-color: rgb(125, 231, 151);
+  background-color: #58ad52;
+}
+
+.sub-item:nth-of-type(2) .sub-list {
+  background-color: #dfebdf;
 }
 
 .sub-item:last-of-type .sub-title,
 .sub-item:last-of-type .sub-button {
-  background-color: rgb(49, 187, 251);
+  background-color: #de918cff;
+}
+
+.sub-item:last-of-type .sub-list {
+  background-color: rgb(221, 202, 201);
 }
 
 .sub-list {
@@ -170,15 +178,15 @@ section p {
 }
 
 .demo {
-  background-color: #a4b9be;
+  background-color: #ffa58fff;
 }
 
 section:last-of-type {
-  background-color: #2d3035;
+  background-color: #a68a89ff;
 }
 
 .send-button {
-  background-color: rgb(161, 183, 207);
+  background-color: #ffa58fff;
   border-color: unset;
   border-width: unset;
   border-style: unset;
