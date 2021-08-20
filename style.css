@@ -234,3 +234,13 @@ section:last-of-type {
   text-align: center;
   display: grid;
 }
+
+img {
+  width: inherit;
+}
+
+.send-button:hover,
+.main-button:hover {
+  background-color: rgb(129, 92, 91);
+  color: bisque;
+}
