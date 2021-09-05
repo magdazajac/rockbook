@@ -171,17 +171,22 @@ section p {
   margin-bottom: 5vh;
 }
 
+.contact {
+  width: 40%;
+  margin: 0 auto;
+}
+
 .contact * {
-  margin: auto;
-  width: 35%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   border-color: unset;
   border-width: unset;
   border-style: hidden;
-  margin: 2vh auto;
+  margin: 0.5rem 0;
   border-radius: 3px;
-  padding: 2vh;
+  padding: 0.5rem;
+  box-sizing: border-box; /* zeby margin(?) i padding byly uwzglednione w width - np. 100% to szerokosc wlasciwa + padding + margin(?); inaczej moze wyjsc ponad 100% */
 }
 
 .demo {
@@ -197,14 +202,18 @@ section:last-of-type {
   border-color: unset;
   border-width: unset;
   border-style: unset;
-  width: 15rem;
 }
+
 .white-text {
   color: white;
 }
 .qst-txt {
   font-size: 0.85em;
 }
+
+/**************/
+/*    FORM    */
+/**************/
 
 .contact input[type="email"]::placeholder,
 [type="text"]::placeholder {
@@ -219,17 +228,12 @@ section:last-of-type {
   background-color: rgb(195, 149, 147);
 }
 
-#message {
-  height: 10vh;
-}
-
 /* .contact:nth-of-type(3) {
   height: 10vh;
 } */
 
 .send-button {
   padding: 1rem 2.6rem;
-  width: 39%;
   margin: auto;
   text-align: center;
   display: grid;
@@ -243,4 +247,14 @@ img {
 .main-button:hover {
   background-color: rgb(129, 92, 91);
   color: bisque;
+}
+
+.icons a {
+  color: white;
+  opacity: 0.5;
+  padding: 0 0.5rem;
+}
+
+.icons {
+  margin-top: 1rem;
 }
