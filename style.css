@@ -245,8 +245,13 @@ img {
 
 .send-button:hover,
 .main-button:hover {
-  background-color: rgb(129, 92, 91);
+  background-color: rgb(136, 90, 88);
   color: bisque;
+}
+
+.sub-button:hover {
+  opacity: 0.7;
+  color: rgb(0, 0, 0);
 }
 
 .icons a {
@@ -257,4 +262,46 @@ img {
 
 .icons {
   margin-top: 1rem;
+}
+
+/**************/
+/*     RWD    */
+/**************/
+
+@media only screen and (max-width: 600px) {
+  .top-bar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  img {
+    display: none;
+  }
+
+  .sub {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 60%;
+    overflow: scroll;
+  }
+
+  .sub-item {
+    width: auto;
+  }
+
+  .sub-button {
+    margin-bottom: 2rem;
+  }
+
+  .contact {
+    width: fit-content;
+  }
+
+  footer .wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
