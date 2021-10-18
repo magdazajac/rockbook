@@ -28,3 +28,47 @@ window.addEventListener("scroll", function () {
   let hideScroll = document.querySelector(".btnScroll");
   hideScroll.classList.toggle("appear", window.scrollY > 100);
 });
+
+const slider = {
+  currentBackgroundIndex: 0,
+  backgrounds: ["back.jpg", "back2.jpg", "back3.jpg", "Back4.jpg"], // .jpg!!!
+  getNextBackgroundIndex: function () {
+    return this.currentBackgroundIndex + 1 >= this.backgrounds.length
+      ? 0
+      : this.currentBackgroundIndex + 1;
+  },
+  nextImage: function () {
+    const currentBackground = document.querySelector(
+      ".section_slider .current_background"
+    );
+    const nextBackground = document.querySelector(
+      ".section_slider .next_background"
+    );
+    nextBackground.style.transition = "1s";
+    nextBackground.style.left = "0";
+    currentBackground.style.transition = "1s";
+    currentBackground.style.left = "-100%";
+    this.currentBackgroundIndex = this.getNextBackgroundIndex();
+    this.setupAfterImageChange();
+  },
+  setupAfterImageChange: function () {
+    // 1. Zmienić pozycję obrazków - pozycja wyjściowa
+    // 2. Przez zmianę pozycji take zmianę backgroundu, aby uytkownik juz nie zobaczył tej zmiany
+    const currentBackground = document.querySelector(
+      ".section_slider .current_background"
+    );
+    const nextBackground = document.querySelector(
+      ".section_slider .next_background"
+    );
+    currentBackground.style.backgroundColor =
+      this.backgrounds[this.currentBackgroundIndex];
+    currentBackground.style.left = "0";
+    nextBackground.style.left = "100%";
+    nextBackground.style.backgroundColor =
+      this.backgrounds[this.getNextBackgroundIndex()];
+  },
+};
+
+setInterval(function () {
+  slider.nextImage();
+}, 1500);
