@@ -5,7 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
     rel="stylesheet"
   />
   <script
@@ -16,16 +16,20 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <section class="with-background">
+  <section id="with_background" class="with-background">
     <div class="wrapper">
       <div class="top-bar">
         <h1>Rockbook</h1>
         <nav>
-          <ul class="nav-bar">
-            <li>Home<a href="http://"></a></li>
-            <li>Team<a href="http://"></a></li>
-            <li>Our Story<a href="http://"></a></li>
-            <li>Help<a href="http://"></a></li>
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <ul id="main_nav-bar" class="nav-bar">
+            <li><a href="#with_background">Home</a></li>
+            <li><a href="#demo_white_text">Where</a></li>
+            <li><a href="#third_section">Price</a></li>
+            <li><a href="#white_text">Contact</a></li>
           </ul>
         </nav>
       </div>
@@ -36,10 +40,13 @@
           mineral.
         </p>
         <button class="main-button">Buy it now</button>
+        <button class="btnScroll">
+          <i class="fas fa-chevron-circle-up"></i>
+        </button>
       </div>
     </div>
   </section>
-  <section class="demo white-text">
+  <section id="demo_white_text" class="demo white-text">
     <div class="wrapper">
       <div class="second-wrapper">
         <h2>Works in any browser</h2>
@@ -52,7 +59,7 @@
       <img src="safari_image.png" alt="safari browser image" />
     </div>
   </section>
-  <section>
+  <section id="third_section" class="third_section">
     <div class="wrapper">
       <p class="">Choose your subcription or get free</p>
       <div class="sub">
@@ -94,7 +101,7 @@
       </p>
     </div>
   </section>
-  <section class="white-text">
+  <section id="white_text" class="white-text">
     <div class="wrapper">
       <h2>Get in Touch</h2>
       <p>
@@ -102,9 +109,9 @@
         hear from you.
       </p>
       <form class="contact">
-        <input type="text" id="name" />
-        <input type="email" placeholder="Email..." />
-        <input type="text" id="message" placeholder="Message" />
+        <input type="text" id="name" required />
+        <input type="email" placeholder="Email..." required />
+        <textarea id="message" placeholder="Message"></textarea>
         <button class="send-button">Send!</button>
       </form>
       <div class="icons">
@@ -127,4 +134,5 @@
       </nav>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
