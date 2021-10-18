@@ -129,7 +129,7 @@ section.with-background {
 .btnScroll i {
   outline: none;
   border: unset;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   box-shadow: 0px 4px 5px -1px rgb(129 60 43);
 }
 
@@ -441,7 +441,7 @@ img {
   }
 
   img {
-    display: none;
+    width: 60vw;
   }
 
   .sub {
