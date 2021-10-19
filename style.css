@@ -20,18 +20,10 @@ footer {
   position: relative;
 }
 
-/* section.with-background {
-  background-image: url("back.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
 .section_slider {
   position: absolute;
   top: 0%;
   left: 0%;
-  /* background-color: tomato; */
   width: 100%;
   height: 100%;
 }
@@ -45,7 +37,6 @@ footer {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  /* transition: 1s; */
 }
 
 .current_background {
