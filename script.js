@@ -31,44 +31,65 @@ window.addEventListener("scroll", function () {
 
 const slider = {
   currentBackgroundIndex: 0,
-  backgrounds: ["back.jpg", "back2.jpg", "back3.jpg", "Back4.jpg"], // .jpg!!!
+  backgrounds: ["back.jpg", "back2.jpg", "back3.jpg", "Back4.jpg"],
+  getBackground: {
+    current: function () {
+      this.instances.current =
+        this.instances.current ??
+        document.querySelector(".section_slider .current_background");
+      return this.instances.current;
+    },
+    next: function () {
+      this.instances.next =
+        this.instances.next ??
+        document.querySelector(".section_slider .next_background");
+      return this.instances.next;
+    },
+    instances: {
+      current: null,
+      next: null,
+    },
+  },
   getNextBackgroundIndex: function () {
     return this.currentBackgroundIndex + 1 >= this.backgrounds.length
       ? 0
       : this.currentBackgroundIndex + 1;
   },
   nextImage: function () {
-    const currentBackground = document.querySelector(
-      ".section_slider .current_background"
-    );
-    const nextBackground = document.querySelector(
-      ".section_slider .next_background"
-    );
-    nextBackground.style.transition = "1s";
-    nextBackground.style.left = "0";
-    currentBackground.style.transition = "1s";
-    currentBackground.style.left = "-100%";
+    const currentBackground = this.getBackground.current();
+    const nextBackground = this.getBackground.next();
+    nextBackground.classList.add("slide_in");
     this.currentBackgroundIndex = this.getNextBackgroundIndex();
-    this.setupAfterImageChange();
+    const self = this;
+    nextBackground.addEventListener("animationend", function () {
+      self.setupAfterImageChange();
+    });
   },
   setupAfterImageChange: function () {
-    // 1. Zmienić pozycję obrazków - pozycja wyjściowa
-    // 2. Przez zmianę pozycji take zmianę backgroundu, aby uytkownik juz nie zobaczył tej zmiany
-    const currentBackground = document.querySelector(
-      ".section_slider .current_background"
-    );
-    const nextBackground = document.querySelector(
-      ".section_slider .next_background"
-    );
-    currentBackground.style.backgroundColor =
-      this.backgrounds[this.currentBackgroundIndex];
-    currentBackground.style.left = "0";
-    nextBackground.style.left = "100%";
-    nextBackground.style.backgroundColor =
-      this.backgrounds[this.getNextBackgroundIndex()];
+    const currentBackground = this.getBackground.current();
+    const nextBackground = this.getBackground.next();
+    currentBackground.style.backgroundImage =
+      'url("' + this.backgrounds[this.currentBackgroundIndex] + '")';
+    nextBackground.classList.remove("slide_in");
+    nextBackground.style.backgroundImage =
+      'url("' + this.backgrounds[this.getNextBackgroundIndex()] + '")';
+  },
+  dispatch: function () {
+    this.setup();
+    const self = this;
+    setInterval(function () {
+      self.nextImage();
+    }, 3000);
+  },
+  setup: function () {
+    // metoda ustala początkowe tła
+    const currentBackground = this.getBackground.current();
+    const nextBackground = this.getBackground.next();
+    currentBackground.style.backgroundImage =
+      'url("' + this.backgrounds[this.currentBackgroundIndex] + '")';
+    nextBackground.style.backgroundImage =
+      'url("' + this.backgrounds[this.getNextBackgroundIndex()] + '")';
   },
 };
 
-setInterval(function () {
-  slider.nextImage();
-}, 1500);
+slider.dispatch();
