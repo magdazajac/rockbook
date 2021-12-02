@@ -5,7 +5,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap"
     rel="stylesheet"
   />
   <script
@@ -14,6 +14,7 @@
   ></script>
   <link rel="stylesheet" href="reset.css" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon_io/favicon.ico" type="image/x-icon" />
 </head>
 <body>
   <section id="with_background">
@@ -112,11 +113,18 @@
         Got any questions? Feel free to get in touch with us. We would love to
         hear from you.
       </p>
-      <form class="contact">
-        <input type="text" id="name" required />
-        <input type="email" placeholder="Email..." required />
-        <textarea id="message" placeholder="Message"></textarea>
-        <button class="send-button">Send!</button>
+      <form class="contact" action="/" method="GET">
+        <input type="text" name="user-name" id="name" required minlength="3" />
+        <input type="email" name="user-email" placeholder="Email..." required />
+        <textarea
+          name="user-message"
+          id="message"
+          placeholder="Message"
+          required
+          max
+          rows="8"
+        ></textarea>
+        <button type="submit" class="send-button">Send!</button>
       </form>
       <div class="icons">
         <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
